@@ -1,0 +1,31 @@
+﻿@model List<Inv_Informatico.BL.Hardware>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hardware</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Marca
+            </th>
+        </tr>
+    </thead>
+@foreach (var hardware in Model)
+{
+    <tr>
+        <td>@hardware.Id</td>
+        <td>@hardware.Descripcion</td>
+        <td>@hardware.Marca</td>
+    </tr>
+}   
+ 
+</table>
