@@ -32,7 +32,7 @@ namespace Inv_Informatico.BL
             }
             else
             {
-                var categoriaExistente = _contexto.Hardware.Find(categoria.id);
+                var categoriaExistente = _contexto.Categorias.Find(categoria.id);
                 categoriaExistente.Descripcion = categoria.Descripcion;
             }
 

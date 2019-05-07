@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inv_Informatico.BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,28 @@ namespace Inv_Informatico.Web.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        InventarioBL _inventarioBL;
+        UbicacionesBL _ubicacionBL;
+
+        public HomeController()
+        {
+            _inventarioBL = new InventarioBL();
+            _ubicacionBL = new UbicacionesBL();
+        }
+
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Ubicacion");
+        }
+
+        public ActionResult Inventario(int id)
+        {
+            var inventario = _inventarioBL.ObtenerInventarioPorUbicacion(id);
+            var ubicacion = _ubicacionBL.ObtenerUbicacion(id);
+
+            ViewBag.Ubicacion = ubicacion;
+
+            return View(inventario);
         }
     }
 }

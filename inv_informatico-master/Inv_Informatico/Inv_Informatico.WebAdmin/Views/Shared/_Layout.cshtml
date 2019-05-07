@@ -22,16 +22,19 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        @Html.ActionLink("inicio", "Index", "Home")
+                       @Html.ActionLink("Inicio", "Index", "Home")
                     </li>
                     <li>
                         @Html.ActionLink("Hardware", "Index", "Hardware")
                     </li>
                     <li>
-                        @Html.ActionLink("inicio", "Index", "Home")
+                        @Html.ActionLink("Categoria", "Index", "Categorias")
                     </li>
                     <li>
-                        @Html.ActionLink("Categoria", "Index", "Categorias")
+                        @Html.ActionLink("Bodega", "Index", "Bodegas")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Ubicacion", "Index", "Ubicaciones")
                     </li>
                 </ul>
             </div>
@@ -41,9 +44,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer></footer>
             <p>&copy; @DateTime.Now.Year - Inventario Informatico</p>
-        </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>

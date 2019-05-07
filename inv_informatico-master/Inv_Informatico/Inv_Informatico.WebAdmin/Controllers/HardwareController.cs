@@ -11,6 +11,7 @@ namespace Inv_Informatico.WebAdmin.Controllers
     {
         HardwareBL _HardwareBL;
         CategoriasBL _CategoriasBL;
+
         public HardwareController()
         {
             _HardwareBL = new HardwareBL();

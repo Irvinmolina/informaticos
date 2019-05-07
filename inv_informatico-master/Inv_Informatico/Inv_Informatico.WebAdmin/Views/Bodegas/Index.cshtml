@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Inv_Informatico.BL.Bodega>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table_titulo">
+    <tr>
+        <td>
+            <img src="~/assets/img/laptop.jpg" style="width: 100px; height: 60px" align="left">
+        </td>
+        <td align="center" style="color: white">
+            <h2>BODEGA</h2>
+
+        </td>
+        <td>
+            <img src="~/assets/img/laptop.jpg" style="width: 100px; height: 60px" align="right">
+        </td>
+    </tr>
+</table>
+
+<br />
+
+<p>
+    @Html.ActionLink("Crear nueva bodega", "Crear")
+</p>
+
+<div style="width: 100%" align="center">
+    <table class="vitamins">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                    @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

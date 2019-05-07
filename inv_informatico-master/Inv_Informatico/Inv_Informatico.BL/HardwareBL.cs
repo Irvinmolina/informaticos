@@ -17,10 +17,25 @@ namespace Inv_Informatico.BL
             ListadeHardware = new List<Hardware>();
         }
 
+
+
         public List<Hardware> ObtenerHardware()
         {
             ListadeHardware = _contexto.Hardware
                 .Include("Categoria")
+                .OrderBy(r => r.Categoria.Descripcion)
+                .ThenBy(r => r.Descripcion)
+                .ToList();
+            return ListadeHardware;
+
+        }
+
+        public List<Hardware> ObtenerHardwareActivos()
+        {
+            ListadeHardware = _contexto.Hardware
+                .Include("Categoria")
+                .Where(r => r.Activo == true)
+                .OrderBy(r => r.Descripcion)
                 .ToList();
             return ListadeHardware;
 

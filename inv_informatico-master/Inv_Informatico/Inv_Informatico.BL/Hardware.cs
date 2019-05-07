@@ -30,5 +30,7 @@ namespace Inv_Informatico.BL
         [Display(Name = "Imagen")]
         public string UrlImagen { get; set; }
         public bool Activo { get; set; }
+
+        public int Existencia { get; set; }
     }
 }
